@@ -776,6 +776,20 @@ stroke-width="1" />
   and 2 units up the y-axis.
 </p>
 
+<h3>Check Your Knowledge!</h3>
+
+<p>Which axis is horizontal?</p>
+
+<button type="button" onclick="checkAxis('x')">
+  X-axis
+</button>
+
+<button type="button" onclick="checkAxis('y')">
+  Y-axis
+</button>
+
+<p id="axis-feedback" aria-live="polite"></p>
+
         <div class="learning-note">
 
           <strong>Learning Focus:</strong>
@@ -1083,6 +1097,21 @@ stroke-width="1" />
     const initialPage = location.hash.substring(1);
 
     showPage(initialPage || "home");
+
+function checkAxis(answer) {
+  const feedback =
+    document.getElementById("axis-feedback");
+
+  if (answer === "x") {
+    feedback.textContent =
+      "Correct! The x-axis is horizontal.";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent =
+      "Try again! The horizontal axis runs left to right.";
+    feedback.style.color = "red";
+  }
+}
 
   </script>
 
