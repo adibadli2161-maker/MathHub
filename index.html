@@ -873,6 +873,23 @@ stroke-width="1" />
   style="border: 1px solid #e4e4e4; border-radius: 8px;">
 </iframe>
 
+<h3>Check Your Discovery!</h3>
+
+<p>
+  Point B moves from (2,7) to (6,3).
+  How does point B move?
+</p>
+
+<button type="button" onclick="checkDiscovery('left')">
+  Left and up
+</button>
+
+<button type="button" onclick="checkDiscovery('right')">
+  Right and down
+</button>
+
+<p id="discovery-feedback" aria-live="polite"></p>
+
 
         <div class="learning-note">
 
@@ -898,6 +915,22 @@ stroke-width="1" />
         </button>
 
       </div>
+
+function checkDiscovery(answer) {
+  const feedback =
+    document.getElementById("discovery-feedback");
+
+  if (answer === "right") {
+    feedback.textContent =
+      "Correct! x increases by 4 and y decreases by 4.";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent =
+      "Try again! Increasing x means right, " +
+      "while decreasing y means down.";
+    feedback.style.color = "red";
+  }
+}
 
     </section>
 
