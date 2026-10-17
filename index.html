@@ -880,6 +880,7 @@ stroke-width="1" />
   How does point B move?
 </p>
 
+
 <button type="button" onclick="checkDiscovery('left')">
   Left and up
 </button>
@@ -889,6 +890,7 @@ stroke-width="1" />
 </button>
 
 <p id="discovery-feedback" aria-live="polite"></p>
+
 
 
         <div class="learning-note">
@@ -915,22 +917,6 @@ stroke-width="1" />
         </button>
 
       </div>
-
-function checkDiscovery(answer) {
-  const feedback =
-    document.getElementById("discovery-feedback");
-
-  if (answer === "right") {
-    feedback.textContent =
-      "Correct! x increases by 4 and y decreases by 4.";
-    feedback.style.color = "green";
-  } else {
-    feedback.textContent =
-      "Try again! Increasing x means right, " +
-      "while decreasing y means down.";
-    feedback.style.color = "red";
-  }
-}
 
     </section>
 
@@ -1168,6 +1154,22 @@ function checkAxis(answer) {
   } else {
     feedback.textContent =
       "Try again! The horizontal axis runs left to right.";
+    feedback.style.color = "red";
+  }
+}
+
+function checkDiscovery(answer) {
+  const feedback =
+    document.getElementById("discovery-feedback");
+
+  if (answer === "right") {
+    feedback.textContent =
+      "Correct! x increases by 4 and y decreases by 4.";
+    feedback.style.color = "green";
+  } else {
+    feedback.textContent =
+      "Try again! Increasing x means right, " +
+      "while decreasing y means down.";
     feedback.style.color = "red";
   }
 }
